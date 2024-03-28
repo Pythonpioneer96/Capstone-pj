@@ -264,7 +264,7 @@ stages:
         kubernetesCluster: 'terraform-aks-dev-cluster'
         namespace: 'default'
         command: 'apply'
-        arguments: '-f $(System.DefaultWorkingDirectory)/kube-manifests/01-Dev-Environment/01-Dev-namespace.yaml'
+        arguments: '-f $(System.DefaultWorkingDirectory)/kube-manifests/01-Dev-Environment/01-Dev-Namespace.yaml'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
         azureSubscriptionEndpointForSecrets: 'terraform-aks-azurerm-svc-con'
