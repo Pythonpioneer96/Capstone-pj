@@ -12,12 +12,12 @@ trigger:
 variables:
  tag: '(Build.BuildId)'
 
-# # Define Variables
-# variables:
-# - name: DEV_ENVIRONMENT
-#   value: dev 
-# - name: QA_ENVIRONMENT
-#   value: qa 
+# Define Variables
+
+- name: DEV_ENVIRONMENT
+  value: dev 
+- name: QA_ENVIRONMENT
+  value: qa 
  
 
 stages:
