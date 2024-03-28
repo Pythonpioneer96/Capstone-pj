@@ -10,9 +10,9 @@ trigger:
 
 # Variables
 variables:
- tag: '(Build.BuildId)'
+#  tag: '(Build.BuildId)'
 
-# Define Variables
+# # Define Variables
 
 - name: DEV_ENVIRONMENT
   value: dev 
