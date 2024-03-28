@@ -14,9 +14,12 @@ trigger:
 
 # Variables
 variables:
-  tag: '$(Build.BuildId)'
+  tag: 'latest'  # Fixed tag to use in the pipeline
   DEV_ENVIRONMENT: 'dev'
   QA_ENVIRONMENT: 'qa'
+  imageName: 'capstonedockertest2'
+  acrName: 'javancapstone.azurecr.io'
+  
 
  
 
