@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: app1-nginx
-          image: javancapstone.azurecr.io/capstonedockertest1:${BUILD_ID}
+          image: javancapstone.azurecr.io/capstonedockertest1:latest
           ports:
             - containerPort: 80
       nodeSelector:

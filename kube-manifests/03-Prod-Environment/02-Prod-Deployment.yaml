@@ -5,6 +5,8 @@ metadata:
   namespace: prod-env
   labels:
     app: app1-nginx
+  annotations:
+    force-redeploy: "true" # Annotation to trigger redeployment
 spec:
   replicas: 1
   selector:
@@ -17,13 +19,14 @@ spec:
     spec:
       containers:
         - name: app1-nginx
-          image: javancapstone.azurecr.io/capstonedockertest1:e3a320387a06adeb2c724b3b8493b56f933e3050
+          image: javancapstone.azurecr.io/capstonedockertest1:latest
           ports:
             - containerPort: 80
       imagePullSecrets:
         - name: acr-credentials
       nodeSelector:
         app: system-apps
+
 
 ---
 
