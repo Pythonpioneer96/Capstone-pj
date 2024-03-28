@@ -318,7 +318,7 @@ stages:
         kubernetesCluster: 'terraform-aks-dev-cluster'
         namespace: 'qa-env'
         command: 'apply'
-        arguments: '-f $(System.DefaultWorkingDirectory)/kube-manifests/02-QA-Environment/02-QA-Deployment.yaml'
+        arguments: '-f $(System.DefaultWorkingDirectory)/kube-manifests/02-QA-Environment/02-QA-Deployment.yaml --force'
         secretType: 'dockerRegistry'
         containerRegistryType: 'Azure Container Registry'
         azureSubscriptionEndpointForSecrets: 'terraform-aks-azurerm-svc-con'
