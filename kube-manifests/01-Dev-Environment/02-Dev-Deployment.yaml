@@ -19,7 +19,6 @@ spec:
         - name: app1-nginx
           image: javancapstone.azurecr.io/capstonedockertest2:latest
           imagePullPolicy: Always
-          
           ports:
             - containerPort: 80
       nodeSelector:
