@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app1-nginx-deployment
+  namespace: prod-env
+  labels:
+    app: app1-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app1-nginx
+  template:
+    metadata:
+      labels:
+        app: app1-nginx
+    spec:
+      containers:
+        - name: app1-nginx
+          image: javancapstone.azurecr.io/capstonedockertest1:e3a320387a06adeb2c724b3b8493b56f933e3050
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+        - name: acr-credentials
+      nodeSelector:
+        app: system-apps
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: app1-nginx-clusterip-service
+  namespace: prod-env
+  labels:
+    app: app1-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: app1-nginx
+  ports:
+    - port: 80
+      targetPort: 80
