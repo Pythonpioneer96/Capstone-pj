@@ -32,7 +32,7 @@ stages:
         repository: 'Capstonedockertest2'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-        tags:
+        tags: |
           $(tag)
           $(Build.SourceVersion)
     # ## Publish Artifacts pipeline code in addition to Build and Push          
